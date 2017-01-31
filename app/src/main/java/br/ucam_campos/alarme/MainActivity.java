@@ -1,7 +1,9 @@
 package br.ucam_campos.alarme;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,25 +13,29 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+
 
 public class MainActivity extends AppCompatActivity {
+    public static TextView textViewObj;
     @SuppressWarnings("unused")
     private RecyclerView recyclerView;
-    private static final String TAG = MainActivity.class.getSimpleName();
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+    public TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar topToolBar = (Toolbar)findViewById(R.id.toolbar);
-
         topToolBar.setTitle("Alarmes");
         //setSupportActionBar(toolbar);
 
+        textViewObj = ( TextView ) findViewById(R.id.txtv);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
-
 
     }
 
