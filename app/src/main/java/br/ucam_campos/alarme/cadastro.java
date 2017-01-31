@@ -49,6 +49,8 @@ public class cadastro extends AppCompatActivity {
     private Button btn11;
 
 
+
+
     //private PendingIntent pendingIntent;
     private TimePicker tmp;
     private RadioGroup rgru;
@@ -63,6 +65,8 @@ public class cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
 
         itemList = new ArrayList<Item>();
+
+
 
 
         //toolbar
@@ -271,9 +275,11 @@ public class cadastro extends AppCompatActivity {
                 //trava para verificar se o usuário selecionou o modo
                 if (Modo.trava == "Zerado") {
 
-                    Toast.makeText(getApplicationContext(), "selecione o modo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Selecione o modo", Toast.LENGTH_LONG).show();
 
                 } else {
+
+                   Modo.mensagem="1";
 
                     //pegando a hora no TimerPicker
                     final Calendar c = Calendar.getInstance();
@@ -336,21 +342,3 @@ public class cadastro extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
