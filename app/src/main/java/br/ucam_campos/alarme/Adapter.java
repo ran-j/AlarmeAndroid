@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @SuppressWarnings("unused")
-    private static final String TAG = Adapter.class.getSimpleName();
+      private static final String TAG = Adapter.class.getSimpleName();
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView title;
@@ -28,6 +28,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         }
     }
 
+    protected MainActivity context;
+
 
     private static final int ITEM_COUNT = 21;
 
@@ -36,15 +38,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public Adapter(Context c) {
         super();
 
+
+
+
         SharedPreferences prefs = c.getSharedPreferences("PREFERENCIAS", Context.MODE_PRIVATE);
 
         // criando itens da tabela
         items = new ArrayList<>();
         for (int i = 0; i <= prefs.getInt("total", 0); i++) {
             if (prefs.contains("hora_" + i)) {
-                items.add(new Item("Hora:"+prefs.getString("hora_" + i, ""), "Modo:" + prefs.getString("modo_" + i, "")));
+                MainActivity.textViewObj.setVisibility(View.INVISIBLE);
+                items.add(new Item("Hora: "+prefs.getString("hora_" + i, ""), "Modo: " + prefs.getString("modo_" + i, "")));
                 System.out.println("Loop: " + i);
             } else {
+                MainActivity.textViewObj.setVisibility(View.VISIBLE);
                 System.out.println("Nao contem: " + i);
             }
         }
