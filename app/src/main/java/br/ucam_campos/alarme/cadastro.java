@@ -260,7 +260,7 @@ public class cadastro extends AppCompatActivity {
             public void onClick(View v) {
 
                 //mensagem de cancelamento
-                Toast.makeText(getApplicationContext(), "Operação cancelada " + diasem, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Operação cancelada ", Toast.LENGTH_LONG).show();
 
 
                 finish();
