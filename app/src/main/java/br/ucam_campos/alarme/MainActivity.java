@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Modo.trava = "Zerado";
-                Intent it = new Intent(MainActivity.this, cadastro.class);
+                Intent it = new Intent(MainActivity.this, Cadastro.class);
                 startActivity(it);
             }
         });
